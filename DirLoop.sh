@@ -1,7 +1,9 @@
 #! /usr/bin/bash
-pwd > 'initDir'
-mv initDir /
+initDir=$(pwd)
+echo $initDir
 touch DirLoopOut.txt
 cd /
-find . -maxdepth 2 > $initDir/DirLoopOut.txt
+# find . -maxdepth 1 > $initDir/DirLoopOut.txt
+if
 
+cd $initDir
