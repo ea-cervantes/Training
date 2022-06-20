@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project 2</title>
+    <link href="p2.css" rel="stylesheet">
+</head>
+<body>
+    <!-- id containing header image: pokemon logo-->
+    <div id="header">
+        <img src="images/pokelogo.png" id="headerIMG">
+        <!-- crop or make background image-->
+    </div> 
+    <div id="placeholder">
+        <img src="images/who_pokemon.jpg" id="tempIMG">
+    </div>
+    <!-- Description of generator. Variable Text replaced with pokebio-->
+    <div>
+        <p id="about">
+            This site uses pokemon api to generate a random pokemon
+        </p>
+    </div>  
+    <!-- Button: input causes random pull from pokeapi
+        1. RNG between 0 and max # pokedex entry
+        2. Search for RNG# in pokedex
+        3. Pull search information and retrieve data
+        4. Replace current webpage images/text with pulled info
+        5. Reset Button-->
+    <button type="button">Pokebutton!</button>
+    <script type="module" src="p2.js"></script>
+    <script type="module" src="fetchPoke.js"></script>
+</body>
+</html>

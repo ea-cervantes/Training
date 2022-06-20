@@ -13,7 +13,7 @@ let contentRadius = document.getElementById("content-radius")
 let borderBox = document.querySelector(".border")
 let paddingBox = document.querySelector(".padding")
 let contentBox = document.querySelector(".content")
-
+let imgBox = document.querySelector("img")
 
 borderRange.addEventListener("change",function(){
     borderBox.style.padding = borderRange.value + "px"
@@ -44,4 +44,5 @@ paddingRadius.addEventListener("change",function(){
 })
 contentRadius.addEventListener("change",function(){
     contentBox.style.borderRadius = contentRadius.value + "px"
+    imgBox.style.borderRadius = contentRadius.value + "px"
 })

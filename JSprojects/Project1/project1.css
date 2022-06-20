@@ -6,6 +6,11 @@ body {
     flex-direction: column;
     color: aliceblue;
 }
+img {
+    width: 300px;
+    height: 400px;
+    border-radius: 0px;
+}
 .border {
     background-color: #f00;
     padding: 45px;
