@@ -1,3 +1,6 @@
+html{
+    font-family: 'press_start_2pregular';
+}
 body {
     display:flex;
     align-items: center;
@@ -5,9 +8,62 @@ body {
     background-color: lightseagreen;
     flex-direction: column;
     color: whitesmoke;
+    font-family: 'press_start_2pregular';
 }
-img {
+#dexNO{
+    padding-bottom: 10px;
+}
+#headerIMG {
     width: 500px;
     height: 350px;
     place-content: center;
+    align-items: center;
+    font-family: 'press_start_2pregular';
+}
+#tempIMG {
+    width: 450px;
+    height: auto;
+    place-content: center;
+    align-items: center;
+    font-family: 'press_start_2pregular';
+}
+#buttonIMG {
+    width: 50px;
+    height: auto;
+    place-content: center;
+    align-items: center;
+    font-family: 'press_start_2pregular';
+}
+.allTables{
+    display: block;
+    color:whitesmoke;
+    align-items: center;
+    font-family: 'press_start_2pregular';
+    padding-bottom: 15px;
+}
+#pokeName{
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'press_start_2pregular';
+}
+#aboutDiv{
+    padding-bottom: 10px;
+    text-align: left;
+    align-content: center;
+    font-family: 'press_start_2pregular';
+}
+#about{
+    text-align: center;
+}
+@font-face {
+    font-family: 'press_start_2pregular';
+    src: url('pressstart2p-regular-webfont.woff2') format('woff2'),
+         url('pressstart2p-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+button{
+    border-radius: 10px;
 }

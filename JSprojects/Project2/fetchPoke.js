@@ -16,6 +16,7 @@ export default class fetchPoke{
     async pull(url){
         var response = await fetch(url);
         var data = await response.json();
+
         return data;
     }
     
