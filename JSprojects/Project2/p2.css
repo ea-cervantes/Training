@@ -2,24 +2,33 @@ html{
     font-family: 'press_start_2pregular';
 }
 body {
-    display:flex;
-    align-items: center;
-    justify-content: center;
     background-color: lightseagreen;
-    flex-direction: column;
     color: whitesmoke;
     font-family: 'press_start_2pregular';
+}
+#darkModeDiv{
+    float: left;
+}
+#darkModeIMG{
+    width: 50px;
+    height: auto;
+}
+#headerIMGDiv{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 110px;
+
+    height: 280px;
+    overflow: hidden; 
 }
 #headerIMG {
     width: 500px;
     height: 350px;
-    place-content: center;
-    align-items: center;
-    font-family: 'press_start_2pregular';
-    padding-left: 150p;
 }
 #spacer{
     padding-bottom: 10px;
+    flex-direction: column;
 }
 #dexNO{
     padding-bottom: 5px;
@@ -29,27 +38,27 @@ body {
     text-align: center;
     font-family: 'press_start_2pregular';
 }
+#tempIMGDiv{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 #tempIMG {
     width: 450px;
     height: auto;
-    place-content: center;
-    align-items: center;
     font-family: 'press_start_2pregular';
     padding-bottom: 15px;
 }
 .allTables{
-    display: block;
     color:whitesmoke;
-    align-items: center;
-    font-family: 'press_start_2pregular';
-    padding-bottom: 15px;
+    margin: 0;
+    padding: 0;
     padding-top: 15px;
 }
 
 #aboutDiv{
     padding-bottom: 10px;
     text-align: left;
-    align-content: center;
     font-family: 'press_start_2pregular';
 }
 #about{
@@ -67,10 +76,15 @@ body {
 #buttonIMG {
     width: 50px;
     height: auto;
-    place-content: center;
-    align-items: center;
     font-family: 'press_start_2pregular';
+}
+#dexButtonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
 }
 button{
     border-radius: 10px;
+    cursor: pointer;
 }

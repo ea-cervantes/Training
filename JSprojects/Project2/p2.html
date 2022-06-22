@@ -10,19 +10,27 @@
 </head>
 
 <body>
+
     <!-- id containing header image: pokemon logo-->
-    <div id="header">
-        <img src="images/pokelogo.png" id="headerIMG">
-        <!-- crop or make background image-->
+    <div id="darkModeDiv">
+        <button id="darkModeButton" type="button" value="Off">
+            <img src="images/gengar.png" id="darkModeIMG">
+        </button>
     </div>
-    <div id ="spacer">
+    <div id="spacer">
+        <div id="headerIMGDiv">
+            
+            <img src="images/pokelogo.png" id="headerIMG">
+        </div>
         <div id="pokedexHeader">
             <div id="dexNO"></div>
             <div id="pokeName"></div>
-            <div id ="typeTab"></div>
-        </div> 
+            <div id="typeTab"></div>
+        </div>
     </div>
-    <img src="images/who_pokemon.jpg" id="tempIMG">
+    <div id="tempIMGDiv">
+        <img src="images/who_pokemon.jpg" id="tempIMG">
+    </div>
 
     <!-- Description of generator. Variable Text replaced with pokebio-->
     <div class="allTables">
@@ -35,12 +43,18 @@
         <div id="statsDiv"></div>
     </div>
     <!-- Button: input causes random pull from pokeapi-->
-    <button type="button"><img src="images/dex.png" id="buttonIMG"></button>
+    <div id="dexButtonDiv">
+        <button id="dexButton" type="button">
+            <img src="images/dex.png" id="buttonIMG">
+        </button>
+    </div>
 
     <script type="module" src="p2.js"></script>
     <script type="module" src="fetchPoke.js"></script>
     <script type="module" src="typeStyle.js"></script>
     <script type="module" src="tableStyle.js"></script>
+    <script type="module" src="darkStyle.js"></script>
+    <script type="module" src="darkMode.js"></script>
 </body>
 
 </html>

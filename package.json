@@ -1,0 +1,20 @@
+{
+  "name": "training",
+  "version": "1.0.0",
+  "description": "npm package of API project",
+  "main": "p2.html",
+  "scripts": {
+    "test": "echo \"test command output\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ea-cervantes/Training.git"
+  },
+  "author": "cervantese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ea-cervantes/Training/issues",
+    "email": "e.cervantes@caci.com"
+  },
+  "homepage": "https://github.com/ea-cervantes/Training#readme"
+}
