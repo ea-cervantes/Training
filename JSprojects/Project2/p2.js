@@ -1,22 +1,25 @@
 import fetchPoke from './fetchPoke.js';
+import tableStyle from './tableStyle.js';
 import typeStyle from './typeStyle.js'
 
-let currPoke = document.getElementById("tempIMG");
 
-// declare current image description text
+
+// import main elements from html for manip
+let currPoke = document.getElementById("tempIMG");
 let pokeName = document.getElementById("pokeName");
 let about = document.getElementById("about");
 let tableDiv = document.getElementById("aboutDiv");
 let satsDiv = document.getElementById("statsDiv");
-let typeDiv = document.getElementById('typeBar');
+let typeDiv = document.getElementById('typeTab');
 let dexNO = document.getElementById("dexNO");
+let dexHeader = document.getElementById("pokedexHeader");
 
 let button = document.querySelector("button");
 console.log("button", button);
 button.addEventListener("click", (e) => {
     console.log("click", e)
 
-    // 1. RNG in fetchPoke 
+    // 1. RNG for pokedex entries Gen 1-3
     var dexNum = Math.ceil((Math.random() * 386));
     //console.log(dexNum);
     // 2. Start API data fetch for pokedex search
@@ -42,10 +45,13 @@ button.addEventListener("click", (e) => {
         else {
             currPoke.src = data.sprites.front_default;
         }
+        // 
         dexNO.textContent = 'National Dex No.';
         dexNO.append(dexNum);
+        tableStyle(currPoke);
         currPoke.style.width = '250px';
         currPoke.style.height = '200px';
+
 
         var movesTable = document.getElementById("movesTable")
         if (movesTable != null) {
@@ -57,14 +63,9 @@ button.addEventListener("click", (e) => {
         // Exclude duplicates, add to table
         var movesTable = document.createElement("table");
         movesTable.id = "movesTable";
-        movesTable.style.border = "thin solid #92C6F4";
-        movesTable.style.borderWidth = "3px 5px";
-        movesTable.style.borderRadius = "10px"
-        movesTable.style.color = "black";
-        movesTable.style.backgroundColor = "white";
-        movesTable.style.width = "400px"
-        movesTable.style.padding = "0px 20 px"
-        movesTable.style.margin = "auto"
+        tableStyle(movesTable);
+        movesTable.style.padding = "0px 20 px";
+        movesTable.style.margin = "auto";
 
         var ind = 0;
         for (var i = 0; i < 2; i++) {
@@ -75,7 +76,7 @@ button.addEventListener("click", (e) => {
                 var moveIN = data.moves[randMove]
                 var cell = trow.insertCell(-1);
                 cell.innerHTML = moveIN.move.name;
-                data.moves.splice(randMove,1);
+                data.moves.splice(randMove, 1);
 
                 console.log(cell.innerHTML);
                 ind++;
@@ -90,13 +91,8 @@ button.addEventListener("click", (e) => {
         }
         var typeTab = document.createElement("table");
         typeTab.id = "typeTab";
-
-        typeTab.style.border = "thin solid #92C6F4";
-        typeTab.style.borderWidth = "3px 5px";
-        typeTab.style.borderRadius = "10px"
-        typeTab.style.backgroundColor = "white";
         typeTab.style.color = "white";
-        typeTab.style.textAlign = "center";
+        typeTab.style.alignSelf = "center";
 
 
         var ttrow = typeTab.insertRow(-1);
@@ -107,7 +103,11 @@ button.addEventListener("click", (e) => {
             cell.style.backgroundColor = typeStyle(data.types[i].type.name);
         }
 
-        typeDiv.appendChild(typeTab);
+        dexHeader.appendChild(typeTab);
+        tableStyle(dexHeader);
+        dexHeader.style.textAlign = "center";
+        dexHeader.style.alignContent = "center";
+        dexHeader.style.padding = "10px";
 
         // Check for stats table, clear existing table, create and fill
 
@@ -126,7 +126,7 @@ button.addEventListener("click", (e) => {
             var cell = strow.insertCell(-1);
             cell.innerHTML = data.stats[i].base_stat;
             statsSum = statsSum + data.stats[i].base_stat;
-            if(i==5){
+            if (i == 5) {
                 var strow = statsTab.insertRow(-1);
                 var cell = strow.insertCell(-1);
                 cell.innerHTML = "sum";
@@ -134,15 +134,8 @@ button.addEventListener("click", (e) => {
                 cell.innerHTML = statsSum;
             }
         }
-
-        statsTab.style.textAlign = "left";
-        statsTab.style.border = "thin solid #92C6F4";
-        statsTab.style.borderWidth = "3px 5px";
-        statsTab.style.borderRadius = "10px"
-        statsTab.style.backgroundColor = "white";
-        statsTab.style.color = "black";
-        statsTab.style.width = "400px"
-        statsTab.style.marginInline = "auto";
+        tableStyle(statsTab);
+        statsTab.style.alignSelf = "center";
         satsDiv.appendChild(statsTab);
 
 

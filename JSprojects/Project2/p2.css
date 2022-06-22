@@ -10,15 +10,28 @@ body {
     color: whitesmoke;
     font-family: 'press_start_2pregular';
 }
-#dexNO{
-    padding-bottom: 10px;
-}
 #headerIMG {
     width: 500px;
     height: 350px;
     place-content: center;
     align-items: center;
     font-family: 'press_start_2pregular';
+    padding-left: 150p;
+}
+#spacer{
+    padding-bottom: 10px;
+}
+#dexNO{
+    padding-bottom: 5px;
+}
+#pokeName{
+    padding-bottom: 5px;
+    text-align: center;
+    font-family: 'press_start_2pregular';
+}
+#typeTab{
+    align-items: center;
+    text-align: center;
 }
 #tempIMG {
     width: 450px;
@@ -26,13 +39,7 @@ body {
     place-content: center;
     align-items: center;
     font-family: 'press_start_2pregular';
-}
-#buttonIMG {
-    width: 50px;
-    height: auto;
-    place-content: center;
-    align-items: center;
-    font-family: 'press_start_2pregular';
+    padding-bottom: 15px;
 }
 .allTables{
     display: block;
@@ -40,12 +47,9 @@ body {
     align-items: center;
     font-family: 'press_start_2pregular';
     padding-bottom: 15px;
+    padding-top: 15px;
 }
-#pokeName{
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: 'press_start_2pregular';
-}
+
 #aboutDiv{
     padding-bottom: 10px;
     text-align: left;
@@ -55,6 +59,7 @@ body {
 #about{
     text-align: center;
 }
+
 @font-face {
     font-family: 'press_start_2pregular';
     src: url('pressstart2p-regular-webfont.woff2') format('woff2'),
@@ -63,7 +68,13 @@ body {
     font-style: normal;
 
 }
-
+#buttonIMG {
+    width: 50px;
+    height: auto;
+    place-content: center;
+    align-items: center;
+    font-family: 'press_start_2pregular';
+}
 button{
     border-radius: 10px;
 }
