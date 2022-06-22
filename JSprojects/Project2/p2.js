@@ -10,7 +10,6 @@ let pokeName = document.getElementById("pokeName");
 let about = document.getElementById("about");
 let tableDiv = document.getElementById("aboutDiv");
 let satsDiv = document.getElementById("statsDiv");
-let typeDiv = document.getElementById('typeTab');
 let dexNO = document.getElementById("dexNO");
 let dexHeader = document.getElementById("pokedexHeader");
 
@@ -92,8 +91,7 @@ button.addEventListener("click", (e) => {
         var typeTab = document.createElement("table");
         typeTab.id = "typeTab";
         typeTab.style.color = "white";
-        typeTab.style.alignSelf = "center";
-
+        typeTab.style.margin = "auto";
 
         var ttrow = typeTab.insertRow(-1);
         var typeTabLen = data.types.length;
@@ -135,7 +133,6 @@ button.addEventListener("click", (e) => {
             }
         }
         tableStyle(statsTab);
-        statsTab.style.alignSelf = "center";
         satsDiv.appendChild(statsTab);
 
 
