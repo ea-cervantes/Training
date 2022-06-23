@@ -1,9 +1,11 @@
 {
   "name": "training",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm package of API project",
   "main": "p2.html",
   "scripts": {
+    "lint": "eslint **/*.js",
+    "lint-fix": "eslint **/*.js --fix",
     "test": "echo \"test command output\""
   },
   "repository": {
@@ -16,5 +18,16 @@
     "url": "https://github.com/ea-cervantes/Training/issues",
     "email": "e.cervantes@caci.com"
   },
-  "homepage": "https://github.com/ea-cervantes/Training#readme"
+  "homepage": "https://github.com/ea-cervantes/Training#readme",
+  "devDependencies": {
+    "eslint-config-opensphere":"^7.0.0",
+    "eslint-plugin-opensphere":"^2.5.0",
+    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint": "^8.18.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "opensphere"
+    ]
+  }
 }

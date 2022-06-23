@@ -1,23 +1,32 @@
-export default class fetchPoke{
+/**
+ *
+ */
+export default class fetchPoke {
+  /**
+   *
+   */
+  constructor() {
+  }
 
-    constructor () {
-        var name;
-        var type;
-        var dexEntry;
-    }
-        
-    url(num){
-        const baseURL = "https://pokeapi.co/api/v2/pokemon/";
-        var searchURL = baseURL.concat(num.toString());
-        console.log(searchURL)
-        return searchURL
-    };
-    
-    async pull(url){
-        var response = await fetch(url);
-        var data = await response.json();
+  /**
+   * @param {number} num
+   * @return {string}
+   */
+  url(num) {
+    const baseURL = 'https://pokeapi.co/api/v2/pokemon/';
+    var searchURL = baseURL.concat(num.toString());
+    console.log(searchURL);
+    return searchURL;
+  }
 
-        return data;
-    }
-    
+  /**
+   * @param {string} url
+   * @return {Object}
+   */
+  async pull(url) {
+    var response = await fetch(url);
+    var data = await response.json();
+
+    return data;
+  }
 }

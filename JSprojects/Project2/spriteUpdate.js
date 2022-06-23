@@ -1,6 +1,12 @@
 import darkStyle from './darkStyle.js';
 import tableStyle from './tableStyle.js';
 
+/**
+ *
+ * @param {Object} data
+ * @param {string} OnOff
+ * @param {HTMLElement} currPoke
+ */
 export default function spriteUpdate(data, OnOff, currPoke) {
   // Update placeholder image with pokemon sprite
   // Chance of getting a shiny!
@@ -8,16 +14,14 @@ export default function spriteUpdate(data, OnOff, currPoke) {
   var chancey = Math.ceil(Math.random() * 10000);
   if (shinyLim >= chancey) {
     currPoke.src = data.sprites.front_shiny;
-  }
-  else {
+  } else {
     currPoke.src = data.sprites.front_default;
   }
-  // 
-  if (OnOff.value == "Off") {
+  //
+  if (OnOff.value == 'Off') {
     tableStyle(currPoke);
-    console.log(OnOff.value)
-  }
-  else {
+    console.log(OnOff.value);
+  } else {
     darkStyle(currPoke);
   }
   currPoke.style.width = '250px';

@@ -2,21 +2,27 @@ import darkStyle from './darkStyle.js';
 import tableStyle from './tableStyle.js';
 import typeStyle from './typeStyle.js';
 
-export default function dexEntryCreate(data, OnOff,dexHeader,dexNum) {
+/**
+ * @param {Object} data
+ * @param {string} OnOff
+ * @param {HTMLElement} dexHeader
+ * @param {number} dexNum
+ */
+export default function dexEntryCreate(data, OnOff, dexHeader, dexNum) {
   // Update text content with pokemon name
   pokeName.textContent = data.name.toUpperCase();
   dexNO.textContent = 'National Dex No.';
   dexNO.append(dexNum);
 
   // Check for type table, clear existing table, create and fill
-  var typeTab = document.getElementById("typeTab");
+  var typeTab = document.getElementById('typeTab');
   if (typeTab != null) {
     typeTab.remove();
   }
-  var typeTab = document.createElement("table");
-  typeTab.id = "typeTab";
-  typeTab.style.color = "white";
-  typeTab.style.margin = "auto";
+  var typeTab = document.createElement('table');
+  typeTab.id = 'typeTab';
+  typeTab.style.color = 'white';
+  typeTab.style.margin = 'auto';
 
   var ttrow = typeTab.insertRow(-1);
   var typeTabLen = data.types.length;
@@ -27,15 +33,14 @@ export default function dexEntryCreate(data, OnOff,dexHeader,dexNum) {
   }
 
   dexHeader.appendChild(typeTab);
-  if (OnOff.value == "Off") {
+  if (OnOff.value == 'Off') {
     tableStyle(dexHeader);
-  }
-  else {
+  } else {
     darkStyle(dexHeader);
   }
-  dexHeader.style.textAlign = "center";
-  dexHeader.style.alignContent = "center";
-  dexHeader.style.padding = "10px";
+  dexHeader.style.textAlign = 'center';
+  dexHeader.style.alignContent = 'center';
+  dexHeader.style.padding = '10px';
 
   return;
 }
