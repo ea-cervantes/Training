@@ -7,12 +7,12 @@ fi
 touch DirLoopOut.txt
 
 cd /
-# find . -maxdepth 1 > $initDir/DirLoopOut.txt
-for FILE in *; do
-if [ -d "$FILE" ];
-then
-    echo $FILE >> $initDir/DirLoopOut.txt
-fi
+# find . -maxdepth 2 > $initDir/DirLoopOut.txt
+for FILE in */ ; do
+    [ -L "${FILE%/}" ] && continue
+    for FILE2 in "$FILE"/*; do
+        echo "$FILE2" >> $initDir/DirLoopOut.txt;
+    done
 done
 
 cd $initDir
