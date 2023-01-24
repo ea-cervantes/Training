@@ -10,8 +10,10 @@ cd /
 # find . -maxdepth 2 > $initDir/DirLoopOut.txt
 for FILE in */ ; do
     [ -L "${FILE%/}" ] && continue
-    for FILE2 in "$FILE"/*; do
-        echo "$FILE2" >> $initDir/DirLoopOut.txt;
+    for FILE2 in "$FILE"*; do
+        if [ -d "$FILE2" ]; then
+            echo "$FILE2" >> $initDir/DirLoopOut.txt;
+        fi
     done
 done
 
